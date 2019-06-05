@@ -1,4 +1,7 @@
-# code solving the May 31, 2019 riddler classic puzzle on https://fivethirtyeight.com/features/can-you-win-the-loteria/
+# Code solving the May 31, 2019 riddler classic puzzle on https://fivethirtyeight.com/features/can-you-win-the-loteria/
+# by exploring the whole space of all possible "Numbers Game" puzzles, as in: <cards, target> combinations.
+# The code is efficient enough to run in about 30 minutes on a normal laptop.
+# As a bonus, a function solve_puzzle(cards, target) is also given, which returns a solving expression, if it exists.
 
 
 import itertools
@@ -25,6 +28,14 @@ def extract_cards(n_large):
 
 
 def get_hands(n_large):
+    """
+    get all possible hands, i.e. card combinations, that are possible with a given choice of n_large large cards,
+    considering the effect of the duplications among small cards
+    :param n_large: number of large cards
+    :return: dictionary matching every hand (as a tuple of integers) with its relative frequency within the set; 
+             e.g. get_hands(n_large=2) will contain {... (1, 1, 2, 2, 25, 50): 1, ... (1, 2, 3, 4, 25, 50): 16, ...} 
+             because the second combination will be extracted 16 times more frequently
+    """
     n_small = 6 - n_large
     hands = {}
     for p_large in itertools.combinations(LARGE_CARDS, n_large):
@@ -36,7 +47,7 @@ def get_hands(n_large):
 
 def solve_puzzle(cards, target):
     """
-    extra function, unneeded to solve the riddle, which gives the solution of a specific puzzle, if possible
+    bonus function, unneeded to solve the riddle, which gives the solution of a specific puzzle, if possible
     :param cards: list of extracted card values
     :param target: extracted target number
     :return: string with a solving expression or with a message announcing that no solution exists
