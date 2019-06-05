@@ -1,5 +1,11 @@
 # Results produced by the attached code, based on fully exploring the whole space of possible puzzles.
 
+Parts of the answer:
+1. Solvability probabilities by choice of n_large
+2. Solvability probabilities by extracted target with random choice of n_large
+3. Solvability probabilities by extracted target with optimal choice of n_large
+
+
 Solvability probabilities by choice of n_large:
 A puzzle with n_large = 2 is solvable with probability 98.184493%
 A puzzle with n_large = 1 is solvable with probability 97.713164%
