@@ -1,4 +1,4 @@
-# Results produced by the attahced code
+# Results produced by the attached code, based on fully exploring the whole space of possible puzzles.
 
 Solvability probabilities by choice of n_large:
 A puzzle with n_large = 2 is solvable with probability 98.184493%
